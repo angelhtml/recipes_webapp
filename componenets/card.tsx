@@ -16,7 +16,7 @@ export default function Card({props}: any){
     setPage(page+1);
     axios({
       method:"GET",
-      url:`http://localhost:3000/api/allrecpies?size=${10}&page=${page}`,
+      url:`${process.env.URL}/api/allrecpies?size=${10}&page=${page}`,
     })
     .then( function (res){
       if (res.status === 200) {
@@ -92,4 +92,5 @@ export default function Card({props}: any){
         <button onClick={fetchMoreData}>test</button>
         </div>
     )
+
 }
